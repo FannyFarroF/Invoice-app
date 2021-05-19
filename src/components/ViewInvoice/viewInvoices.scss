@@ -371,6 +371,7 @@ body.dark {
         }
 
         .control-invoice {
+          background-color: $bg-color-body-dark;
           .btn {
             &.edit {
               background-color: $edit-bg-dark;

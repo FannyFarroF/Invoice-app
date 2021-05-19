@@ -133,9 +133,9 @@ function ViewInvoice(props){
               </div>
 
               <div className = "bill-content-items">
-                {invoice.items.map((elem)=> {
+                {invoice.items.map((elem,index)=> {
                   return(
-                    <div className = "bill-content-item row justify-content-between">
+                    <div key={index} className = "bill-content-item row justify-content-between">
                       <h3 className="bill-name flex-50">{elem.name}</h3>
                       <div className = "information-price flex-50 row justify-content-between">
                           <h3 className = "bill-qty">{elem.quantity}</h3>

@@ -80,18 +80,18 @@ function Invoices(props){
   const Filter = (filterby) =>{
     
       if(filterby === "paid"){
-        const newData = currentData.filter(elem => elem.status == filterby);
+        const newData = currentData.filter(elem => elem.status === filterby);
         // console.log("NewData", data)
         setData(newData);
         // RenderInvoices(newData);
         console.log(newData);
       }else if(filterby === "draft"){
-        const newData = currentData.filter(elem => elem.status == filterby);
+        const newData = currentData.filter(elem => elem.status === filterby);
         // console.log("NewData", data)
         setData(newData);
 
       }else if(filterby === "pending"){
-        const newData = currentData.filter(elem => elem.status == filterby);
+        const newData = currentData.filter(elem => elem.status === filterby);
         // console.log("NewData", data)
         setData(newData);
       }
@@ -163,7 +163,7 @@ function Invoices(props){
 
         {data.map((elem,index)=>{
               return(
-                <div className="content-item row align-items-center justify-content-between">
+                <div key={index} className="content-item row align-items-center justify-content-between">
                   <h3 className="commande-number">
                     <span>#</span>{elem.id}
                   </h3>
