@@ -33,7 +33,7 @@ function ViewInvoice(props){
       ev.preventDefault();
       props.setCurrentData(currentData);
       toggleDisplayEdit();
-      history.push("/");
+      history.push("/Invoice-app");
   }
 
   const markAs = () =>{
@@ -43,7 +43,7 @@ function ViewInvoice(props){
       invoice.status = "paid";
     }
     props.setCurrentData(currentData);
-    history.push("/")
+    history.push("/Invoice-app")
   }
 
   const Delete = () =>{
@@ -51,7 +51,7 @@ function ViewInvoice(props){
     const NewData = currentData.filter((elem)=> elem.id !== id)
     props.setCurrentData(NewData);
     toggleDisplayEdit();
-    history.push("/")
+    history.push("/Invoice-app")
     
   }
 
@@ -329,7 +329,7 @@ function ViewInvoice(props){
         
         <div className = "content-view-invoice container padding-top-72">
         
-          <Link to="./" className = "go-back-content row align-items-center justify-content-between">     
+          <Link to="/Invoice-app" className = "go-back-content row align-items-center justify-content-between">     
               <img src={Back} alt = "Go back" />
               <h3>Go back</h3>
           </Link>
