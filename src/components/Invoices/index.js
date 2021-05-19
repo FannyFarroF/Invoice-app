@@ -225,7 +225,7 @@ function Invoices(props){
                 <h3 className="two">Bill From</h3>
                 <div className="data-control">
                   <label className="body1">Street Address</label>
-                  <input type="text" placeholder="Street Adress" name="street" onChange={(ev) => handleChange(ev,'senderAddress')}/>
+                  <input type="text" title="Street Adress" name="street" onChange={(ev) => handleChange(ev,'senderAddress')}/>
                 </div>
                 <div className="data-control row justify-content-between ">
                   <div className="data-input">
@@ -266,24 +266,24 @@ function Invoices(props){
 
                   <div className="data-input">
                     <label className="body1">Country</label>
-                    <input type="text" placeholder = "country" name = "country" onChange={(ev) => handleChange(ev,'clientAddress')} />
+                    <input type="text" name = "country" onChange={(ev) => handleChange(ev,'clientAddress')} />
                   </div>
                 </div>
 
                 <div className="data-control row justify-content-between">
                   <div className="date-control">
                     <label className="body1">Invoice Date</label>
-                    <input type="date" placeholder ="Invoice Date" name = "createdAt"  onChange={(ev) => handleChange(ev,'')}/>
+                    <input type="date" name = "createdAt"  onChange={(ev) => handleChange(ev,'')}/>
                   </div>
                   <div className="payement-terms">
                     <label className="body1">Payement terms</label>
-                    <input type="date" placeholder = "Payement Terms" name = "paymentDue" onChange={(ev) => handleChange(ev,'')} />
+                    <input type="date" name = "paymentDue" onChange={(ev) => handleChange(ev,'')} />
                   </div>
                 </div>
 
                 <div className="data-control">
                   <label className="body1">Project description</label>
-                  <input type="text" placeholder = "Description" name = "description" onChange={(ev) => handleChange(ev,'')} />
+                  <input type="text" name = "description" onChange={(ev) => handleChange(ev,'')} />
                 </div>
 
                 <div className="list-items">
