@@ -32,7 +32,7 @@ function Invoices(props){
   const [data , setData] = useState(currentData);
   const [newElem, setNewElem] =useState(addElem);
 
-
+console.log(currentData)
 
   // On submit
   const handleSubmit = (ev) => {

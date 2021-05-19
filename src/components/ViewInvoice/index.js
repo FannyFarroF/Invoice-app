@@ -1,10 +1,8 @@
-import {useState,useEffect} from "react";
 import {Link, useParams, useHistory} from "react-router-dom";
 import Back from "../../assets/svg/icon-arrow-left.svg";
 import DeleteItem from "../../assets/svg/icon-delete.svg";
 import AddNewItem from "../../assets/svg/icon-plus.svg";
 import "./viewInvoices.scss";
-import App from "../../App";
 
 
 
@@ -331,7 +329,7 @@ function ViewInvoice(props){
         
         <div className = "content-view-invoice container padding-top-72">
         
-          <Link to="/" className = "go-back-content row align-items-center justify-content-between">     
+          <Link to="./" className = "go-back-content row align-items-center justify-content-between">     
               <img src={Back} alt = "Go back" />
               <h3>Go back</h3>
           </Link>

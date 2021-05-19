@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {BrowserRouter, Route, Switch} from "react-router-dom";
+import {BrowserRouter, Route} from "react-router-dom";
 import Data from "./Api/data.json";
 import "./app.scss";
 import Sidebar from "./components/Sidebar";
@@ -29,10 +29,10 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Sidebar switch = {switchDarkLight} toggleswitch = {toggleSwitch} />
-        <Switch>
-          <Route path = "/" exact component = {()=> <Invoices data={currentData} setCurrentData={setCurrentData} viewInvoice = {viewInvoice} />} />
-          <Route path = "/detail/:id" exact component = {()=> <ViewInvoice data ={currentData} setCurrentData={setCurrentData} invoice={invoice}  />} />        
-        </Switch>
+
+        <Route path = "./" exact component = {()=> <Invoices data={currentData} setCurrentData={setCurrentData} viewInvoice = {viewInvoice} />} />
+        <Route path = "./detail/:id" exact component = {()=> <ViewInvoice data ={currentData} setCurrentData={setCurrentData} invoice={invoice}  />} />        
+
       </div>
     </BrowserRouter>
       
