@@ -14,11 +14,11 @@ function Sidebar(props){
       </div>
 
       <div className="admin-profil">
-        <div className= {`${props.switch ? "display-block" : "display-none"} mode-dark-light`} onClick = {props.toggleswitch}>
-          <img src={Sun} alt="mode dark light" width="19.9" />
-        </div>
         <div className= {`${props.switch ? "display-none" : "display-block"} mode-dark-light`} onClick = {props.toggleswitch}>
-          <img src={Mode} alt="mode dark light" width="19.9" />
+          <img src={Sun} alt="mode dark light" width="20" />
+        </div>
+        <div className= {`${props.switch ? "display-block" : "display-none"} mode-dark-light`} onClick = {props.toggleswitch}>
+          <img src={Mode} alt="mode dark light" width="20" />
         </div>
         <div className="admin-photo">
           <img src={Profile} alt="Profile" width="40" />

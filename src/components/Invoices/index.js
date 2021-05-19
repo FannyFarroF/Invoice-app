@@ -32,12 +32,12 @@ function Invoices(props){
   const [data , setData] = useState(currentData);
   const [newElem, setNewElem] =useState(addElem);
 
-console.log(currentData)
+
 
   // On submit
   const handleSubmit = (ev) => {
     ev.preventDefault();
-    console.log(ev.cancelable)
+
     if(ev.cancelable){
       const newData = [newElem, ...props.data];
       props.setCurrentData(newData);
@@ -81,18 +81,17 @@ console.log(currentData)
     
       if(filterby === "paid"){
         const newData = currentData.filter(elem => elem.status === filterby);
-        // console.log("NewData", data)
+
         setData(newData);
-        // RenderInvoices(newData);
-        console.log(newData);
+
+
       }else if(filterby === "draft"){
         const newData = currentData.filter(elem => elem.status === filterby);
-        // console.log("NewData", data)
+
         setData(newData);
 
       }else if(filterby === "pending"){
         const newData = currentData.filter(elem => elem.status === filterby);
-        // console.log("NewData", data)
         setData(newData);
       }
       else if(filterby === "all"){
@@ -108,7 +107,7 @@ console.log(currentData)
   }
 
   const RenderFilter = () =>{
-    console.log(setData)
+
     return(
       
       
@@ -118,7 +117,7 @@ console.log(currentData)
         <div className="selected-style row align-items-center justify-content-between" onClick ={() => toggleselect("Filter by status")}  >
           <h3 className="two select-elemnt">Filter by status</h3>
           
-          <img src={ArrowDown} alt="select" width="8.46"/>
+          <img src={ArrowDown} alt="select" width="9"/>
         </div>
         <ul className="data-select">
           <li onClick ={() => toggleselect("all")}  >All</li>
@@ -222,69 +221,69 @@ console.log(currentData)
 
             <div className="bill-form">
 
-              <form action="" onSubmit = {handleSubmit}>
+              <form onSubmit = {handleSubmit}>
                 <h3 className="two">Bill From</h3>
                 <div className="data-control">
                   <label className="body1">Street Address</label>
-                  <input type="text" name="street" onChange={(ev) => handleChange(ev,'senderAddress')}/>
+                  <input type="text" placeholder="Street Adress" name="street" onChange={(ev) => handleChange(ev,'senderAddress')}/>
                 </div>
                 <div className="data-control row justify-content-between ">
                   <div className="data-input">
                     <label className="body1">City</label>
-                    <input type="text" name = "city" onChange={(ev) => handleChange(ev,'senderAddress')}  />
+                    <input type="text" placeholder = "City" name = "city" onChange={(ev) => handleChange(ev,'senderAddress')}  />
                   </div>
 
                   <div className="data-input">
                     <label className="body1">Post Code</label>
-                    <input type="text" name = "postCode" onChange={(ev) => handleChange(ev,'senderAddress')}  />
+                    <input type="text" placeholder="Post Code" name = "postCode" onChange={(ev) => handleChange(ev,'senderAddress')}  />
                   </div>
 
                   <div className="data-input">
                     <label className="body1">Country</label>
-                    <input type="text" name = "country" onChange={(ev) => handleChange(ev,'senderAddress')}  />
+                    <input type="text" placeholder = "country" name = "Country" onChange={(ev) => handleChange(ev,'senderAddress')}  />
                   </div>
                 </div>
 
                 <h3 className="two margin-48">Bill To</h3>
                 <div className="data-control">
                   <label className="body1">Client's name</label>
-                  <input type="text"  name= "clientName" onChange={(ev) => handleChange(ev,'')} />
+                  <input type="text" placeholder = "Client's Name"  name= "clientName" onChange={(ev) => handleChange(ev,'')} />
                 </div>
                 <div className="data-control">
                   <label className="body1">Street adress</label>
-                  <input type="text" name = "street" onChange={(ev) => handleChange(ev,'clientAddress')}  />
+                  <input type="text" placeholder = "Street Address" name = "street" onChange={(ev) => handleChange(ev,'clientAddress')}  />
                 </div>
                 <div className="data-control row justify-content-between">
                   <div className="data-input">
                     <label className="body1">City</label>
-                    <input type="text" name = "city" onChange={(ev) => handleChange(ev,'clientAddress')} />
+                    <input type="text" placeholder = "city" name = "city" onChange={(ev) => handleChange(ev,'clientAddress')} />
                   </div>
 
                   <div className="data-input">
                     <label className="body1">Post Code</label>
-                    <input type="text" name="postCode" onChange={(ev) => handleChange(ev,'clientAddress')} />
+                    <input type="text" placeholder = "post code" name="postCode" onChange={(ev) => handleChange(ev,'clientAddress')} />
                   </div>
 
                   <div className="data-input">
                     <label className="body1">Country</label>
-                    <input type="text" name = "country" onChange={(ev) => handleChange(ev,'clientAddress')} />
+                    <input type="text" placeholder = "country" name = "country" onChange={(ev) => handleChange(ev,'clientAddress')} />
                   </div>
                 </div>
 
                 <div className="data-control row justify-content-between">
                   <div className="date-control">
                     <label className="body1">Invoice Date</label>
-                    <input type="date" name = "createdAt"  onChange={(ev) => handleChange(ev,'')}/>
+                    <input type="date" placeholder ="Invoice Date" name = "createdAt"  onChange={(ev) => handleChange(ev,'')}/>
                   </div>
                   <div className="payement-terms">
                     <label className="body1">Payement terms</label>
-                    <input type="date" name = "paymentDue" onChange={(ev) => handleChange(ev,'')} />
+                    <input type="date" placeholder = "Payement Terms" name = "paymentDue" onChange={(ev) => handleChange(ev,'')} />
                   </div>
                 </div>
 
                 <div className="data-control">
                   <label className="body1">Project description</label>
-                  <input type="text" name = "description" onChange={(ev) => handleChange(ev,'')} />
+                  <input type="text" placeholder = "Description" name = "description" onChange={(ev) => handleChange(ev,'')} />
                 </div>
 
                 <div className="list-items">

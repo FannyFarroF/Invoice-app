@@ -179,7 +179,7 @@ function ViewInvoice(props){
   
               <div className="bill-form">
   
-                <form action="" onSubmit = {Submit}>
+                <form onSubmit = {Submit}>
                   <h3 className="two">Bill From</h3>
                   <div className="data-control">
                     <label className="body1">Street Address</label>
