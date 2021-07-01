@@ -1,4 +1,5 @@
 import {Link, useParams, useHistory} from "react-router-dom";
+import {formatDate, formatPrice} from "../Helpers";
 import Back from "../../assets/svg/icon-arrow-left.svg";
 import DeleteItem from "../../assets/svg/icon-delete.svg";
 import AddNewItem from "../../assets/svg/icon-plus.svg";
@@ -15,6 +16,10 @@ function ViewInvoice(props){
   const invoice = props.invoice;
   const {id} = useParams();
   const history = useHistory();
+  window.onload = ()=>{
+    props.viewInvoice(history.location.pathname.split('/')[2]);
+  }
+  
 
   const handleChange = (ev,elem) =>{
 
@@ -100,9 +105,9 @@ function ViewInvoice(props){
             <div className="invoice-information row justify-content-between">
               <div className="information-date">
                 <p className = "body1">Invoice Date</p>
-                <h3 className = "invoice-date" >{invoice.createdAt}</h3>
+                <h3 className = "invoice-date" >{formatDate(invoice.createdAt)}</h3>
                 <p className = "body1">Payment Due</p>
-                <h3>{invoice.paymentDue}</h3>
+                <h3>{formatDate(invoice.paymentDue)}</h3>
               </div>
 
               <div className="information-bill">
@@ -137,8 +142,8 @@ function ViewInvoice(props){
                       <h3 className="bill-name flex-50">{elem.name}</h3>
                       <div className = "information-price flex-50 row justify-content-between">
                           <h3 className = "bill-qty">{elem.quantity}</h3>
-                          <h3 className = "bill-price">£ {elem.price}</h3>
-                          <h3 className = "bill-total">£ {elem.total}</h3>
+                          <h3 className = "bill-price">£ {formatPrice(elem.price)}</h3>
+                          <h3 className = "bill-total">£ {formatPrice(elem.total)}</h3>
                       </div>             
                     </div>
                   )
@@ -148,7 +153,7 @@ function ViewInvoice(props){
 
             <div className = "total-price row align-items-center justify-content-between">
               <p className = "body2">Amount Due</p>
-              <h1>£ {invoice.total}</h1>
+              <h1>£ {formatPrice(invoice.total)}</h1>
             </div>
 
           </div>

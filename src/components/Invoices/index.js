@@ -1,5 +1,6 @@
 import {useState} from "react";
 import { NavLink } from "react-router-dom";
+import {formatDate, formatPrice} from "../Helpers";
 import ArrowDown from "../../assets/svg/icon-arrow-down.svg";
 import Add from "../../assets/svg/icon-plus.svg";
 import Display from "../../assets/svg/icon-arrow-right.svg";
@@ -162,19 +163,24 @@ function Invoices(props){
 
         {data.map((elem,index)=>{
               return(
-                <div key={index} className="content-item row align-items-center justify-content-between">
-                  <h3 className="commande-number">
-                    <span>#</span>{elem.id}
-                  </h3>
-                  <p className = "body1 date" ><span>Due</span> {elem.createdAt}</p>
-                  <p className="body1 fullName">{elem.clientName}</p>
-                  <h3 className="total-price">£ {elem.total}</h3>
-                  <div className ={`status ${elem.status ==="paid"? "paid":elem.status ==="pending"?'pending':"draft"} center`}>
-                    <h3 className="two command-status">{elem.status}</h3>
+                <div key={index} className="content-item row justify-content-between">
+                  <div className="date-price-info row align-items-center">
+                    <h3 className="commande-number">
+                      <span>#</span>{elem.id}
+                    </h3>
+                    <p className = "body1 date" ><span>Due</span> {formatDate(elem.createdAt)}</p>
+                    <p className="body1 fullName">{elem.clientName}</p>
+                    <h3 className="total-price">£ {formatPrice(elem.total)}</h3>                  
                   </div>
-                  <NavLink to={`/detail/${elem.id}`} onClick = {()=> props.viewInvoice(elem.id)}>
-                    <img src ={Display} alt="Display" />
-                  </NavLink>
+
+                  <div className="paid-link row justify-content-between justify-content-between align-items-center">
+                    <div className ={`status ${elem.status ==="paid"? "paid":elem.status ==="pending"?'pending':"draft"} center`}>
+                      <h3 className="two command-status">{elem.status}</h3>
+                    </div>
+                    <NavLink to={`/detail/${elem.id}`} onClick = {()=> props.viewInvoice(elem.id)}>
+                      <img src ={Display} alt="Display" />
+                    </NavLink>
+                  </div>
                 </div>
               )
         

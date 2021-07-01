@@ -15,7 +15,7 @@
         .select {
           position: relative;
           margin-right: 41px;
-          z-index: 5;
+          z-index: 1;
           .selected-style {
             width: 118px;
             padding: 15px 0;
@@ -68,106 +68,124 @@
         height: 72px;
         background-color: $white;
         padding: 0 32px;
-        margin-bottom: 16px;
         box-shadow: $shadow;
         border-radius: 8px;
+        &:not(:last-of-type) {
+          margin-bottom: 16px;
+        }
         @media (max-width: 750px) {
           height: 134px;
           position: relative;
           padding: 24px;
         }
-        .commande-number {
-          span {
+
+        .date-price-info {
+          width: 448px;
+          .commande-number {
+            flex: 1 1 25%;
+            width: 25%;
+            max-width: 103px;
+            span {
+              color: $purple-01;
+            }
+            @media (max-width: 750px) {
+              flex: 1 1 50%;
+              width: 50%;
+            }
+          }
+          .date {
+            flex: 1 1 25%;
+            width: 25%;
+            max-width: 195px;
             color: $purple-01;
-          }
-          @media (max-width: 750px) {
-            flex: 1 1 50%;
-            width: 50%;
-          }
-        }
-        .date {
-          color: $purple-01;
-          span {
-            color: $purple-02;
-          }
-        }
-
-        .fullName {
-          color: $purple-03;
-          @media (max-width: 750px) {
-            flex: 1 1 100%;
-            width: 100%;
-          }
-        }
-
-        .total-price {
-          @media (max-width: 750px) {
-            flex: 1 1 100%;
-            width: 100%;
-          }
-        }
-
-        .status {
-          width: 104px;
-          height: 40px;
-          position: relative;
-          border-radius: 6px;
-          @media (max-width: 750px) {
-            position: absolute;
-            right: 22px;
-            top: 62px;
-          }
-
-          &.paid {
-            background-color: $paid-bg;
-            color: $paid-color;
-
-            &::before {
-              position: absolute;
-              content: "";
-              width: 8px;
-              height: 8px;
-              border-radius: 50%;
-              background-color: $paid-color;
-              left: 22px;
-            }
-          }
-          &.pending {
-            background-color: $pending-bg;
-            color: $pending-color;
-
-            &::before {
-              position: absolute;
-              content: "";
-              width: 8px;
-              height: 8px;
-              border-radius: 50%;
-              background-color: $pending-color;
-              left: 10px;
+            span {
+              color: $purple-02;
             }
           }
 
-          &.draft {
-            background-color: $draft-bg;
-            color: $draft-color;
+          .fullName {
+            color: $purple-03;
+            flex: 1 1 25%;
+            width: 25%;
+            max-width: 162px;
+            @media (max-width: 750px) {
+              flex: 1 1 100%;
+              width: 100%;
+            }
+          }
 
-            &::before {
-              position: absolute;
-              content: "";
-              width: 8px;
-              height: 8px;
-              border-radius: 50%;
-              background-color: $draft-color;
-              left: 22px;
+          .total-price {
+            @media (max-width: 750px) {
+              flex: 1 1 100%;
+              width: 100%;
             }
           }
         }
 
-        a {
-          @media (max-width: 750px) {
-            position: absolute;
-            right: 18px;
-            bottom: 12px;
+        .paid-link {
+          width: 128px;
+          .status {
+            width: 104px;
+            height: 40px;
+            position: relative;
+            border-radius: 6px;
+            @media (max-width: 750px) {
+              position: absolute;
+              right: 22px;
+              top: 62px;
+            }
+
+            &.paid {
+              background-color: $paid-bg;
+              color: $paid-color;
+
+              &::before {
+                position: absolute;
+                content: "";
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: $paid-color;
+                left: 22px;
+              }
+            }
+            &.pending {
+              background-color: $pending-bg;
+              color: $pending-color;
+
+              &::before {
+                position: absolute;
+                content: "";
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: $pending-color;
+                left: 10px;
+              }
+            }
+
+            &.draft {
+              background-color: $draft-bg;
+              color: $draft-color;
+
+              &::before {
+                position: absolute;
+                content: "";
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: $draft-color;
+                left: 22px;
+              }
+            }
+          }
+
+          a {
+            @media (max-width: 750px) {
+              position: absolute;
+              right: 18px;
+              bottom: 12px;
+            }
           }
         }
       }
@@ -216,12 +234,24 @@ body.dark {
           .status {
             &.paid {
               background-color: rgba(51, 214, 159, 0.1);
+              h3 {
+                color: $paid-color;
+              }
             }
             &.pending {
               background-color: rgba(255, 127, 0, 0.1);
+              h3 {
+                color: $pending-color;
+              }
             }
             &.draft {
               background-color: rgba(55, 59, 83, 0.1);
+              &::before {
+                background-color: $hover-color-add-item;
+              }
+              h3 {
+                color: $hover-color-add-item;
+              }
             }
           }
         }

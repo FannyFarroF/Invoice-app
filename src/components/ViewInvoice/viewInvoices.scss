@@ -2,7 +2,9 @@
 
 .view-invoice {
   position: relative;
-  height: 1424px;
+  &.heigh {
+    height: 1424px;
+  }
   .content-view-invoice {
     &.container {
       @media (max-width: 750px) {
@@ -129,7 +131,7 @@
     }
 
     .invoice-content {
-      height: 631px;
+      height: auto;
       background-color: $white;
       padding: 48px;
       @media (max-width: 750px) {
@@ -232,6 +234,9 @@
             height: 38px;
             margin-bottom: 24px;
           }
+          .bill-name {
+            font-size: 12px;
+          }
           .information-price {
             h3 {
               flex: 0 0 33.33%;
@@ -239,6 +244,8 @@
             }
 
             .bill-qty {
+              font-size: 12px;
+              color: $purple-01;
               @media (max-width: 750px) {
                 position: absolute;
                 top: 20px;
@@ -248,6 +255,8 @@
             }
 
             .bill-price {
+              font-size: 12px;
+              color: $purple-01;
               @media (max-width: 750px) {
                 position: absolute;
                 top: 20px;
@@ -267,6 +276,7 @@
             }
 
             .bill-total {
+              font-size: 12px;
               @media (max-width: 750px) {
                 position: absolute;
                 top: 12px;
@@ -365,13 +375,20 @@ body.dark {
               background-color: rgba(255, 127, 0, 0.1);
             }
             &.draft {
+              color: $hover-color-add-item;
               background-color: rgba(55, 59, 83, 0.1);
+              &::before {
+                background-color: $hover-color-add-item;
+              }
             }
           }
         }
 
         .control-invoice {
-          background-color: $bg-color-body-dark;
+          @media (max-width: 750px) {
+            background-color: $bg-color-body-dark;
+            width: 100%;
+          }
           .btn {
             &.edit {
               background-color: $edit-bg-dark;

@@ -31,7 +31,7 @@ function App() {
         <Sidebar switch = {switchDarkLight} toggleswitch = {toggleSwitch} />
 
         <Route path = "/Invoice-app" exact component = {()=> <Invoices data={currentData} setCurrentData={setCurrentData} viewInvoice = {viewInvoice} />} />
-        <Route path = "/detail/:id" exact component = {()=> <ViewInvoice data ={currentData} setCurrentData={setCurrentData} invoice={invoice}  />} />        
+        <Route path = "/detail/:id" exact component = {()=> <ViewInvoice data ={currentData} setCurrentData={setCurrentData} invoice={invoice} viewInvoice = {viewInvoice}  />} />        
 
       </div>
     </BrowserRouter>
