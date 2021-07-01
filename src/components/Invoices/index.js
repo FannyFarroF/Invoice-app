@@ -163,14 +163,16 @@ function Invoices(props){
 
         {data.map((elem,index)=>{
               return(
-                <div key={index} className="content-item row justify-content-between">
+                <div key={index} className="content-item row">
                   <div className="date-price-info row align-items-center">
                     <h3 className="commande-number">
                       <span>#</span>{elem.id}
                     </h3>
-                    <p className = "body1 date" ><span>Due</span> {formatDate(elem.paymentDue)}</p>
+                    <p className = "body1 date" ><span>Due</span> {formatDate(elem.paymentDue)}</p>                 
+                  </div>
+                  <div style={{width:"252px"}} className="row align-items-center justify-content-between">
                     <p className="body1 fullName">{elem.clientName}</p>
-                    <h3 className="total-price">£ {formatPrice(elem.total)}</h3>                  
+                    <h3 className="total-price">£ {formatPrice(elem.total)}</h3>
                   </div>
 
                   <div className="paid-link row justify-content-between justify-content-between align-items-center">

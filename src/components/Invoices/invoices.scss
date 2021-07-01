@@ -80,11 +80,10 @@
         }
 
         .date-price-info {
-          width: 448px;
+          // width: 448px;
           .commande-number {
-            flex: 1 1 25%;
-            width: 25%;
-            max-width: 103px;
+            width: 103px;
+            font-size: 12px;
             span {
               color: $purple-01;
             }
@@ -94,9 +93,7 @@
             }
           }
           .date {
-            flex: 1 1 25%;
-            width: 25%;
-            max-width: 195px;
+            width: 151px;
             color: $purple-01;
             span {
               color: $purple-02;
@@ -104,10 +101,7 @@
           }
 
           .fullName {
-            color: $purple-03;
-            flex: 1 1 25%;
-            width: 25%;
-            max-width: 162px;
+            width: 162px;
             @media (max-width: 750px) {
               flex: 1 1 100%;
               width: 100%;
@@ -115,6 +109,8 @@
           }
 
           .total-price {
+            font-size: 16px;
+
             @media (max-width: 750px) {
               flex: 1 1 100%;
               width: 100%;
@@ -124,6 +120,7 @@
 
         .paid-link {
           width: 128px;
+          margin-left: 32px;
           .status {
             width: 104px;
             height: 40px;
