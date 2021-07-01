@@ -435,6 +435,16 @@ body.dark {
           .color {
             color: $hover-color-add-item;
           }
+          .bill-content-item {
+            .information-price {
+              .bill-price {
+                color: $white;
+              }
+              .bill-qty {
+                color: $white;
+              }
+            }
+          }
         }
 
         .total-price {

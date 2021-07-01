@@ -168,7 +168,7 @@ function Invoices(props){
                     <h3 className="commande-number">
                       <span>#</span>{elem.id}
                     </h3>
-                    <p className = "body1 date" ><span>Due</span> {formatDate(elem.createdAt)}</p>
+                    <p className = "body1 date" ><span>Due</span> {formatDate(elem.paymentDue)}</p>
                     <p className="body1 fullName">{elem.clientName}</p>
                     <h3 className="total-price">£ {formatPrice(elem.total)}</h3>                  
                   </div>
