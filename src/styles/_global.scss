@@ -45,6 +45,10 @@ h2 {
 input,
 h3 {
   @include font-size(15, bold, -0.8, 24);
+
+  &.total-price {
+    @include font-size(16, bold, -0.8, 24);
+  }
   @media (max-width: 750px) {
     @include font-size(12, bold, -0.25, 15);
   }
